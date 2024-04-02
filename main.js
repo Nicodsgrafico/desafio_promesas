@@ -11,7 +11,7 @@ async function obtenerDatos() {
 
         await enviarMensaje();
     } catch (error) {
-        console.error('Error al obtener los datos:', error);
+        console.log(error);    
     }
 }
 function enviarMensaje() {
