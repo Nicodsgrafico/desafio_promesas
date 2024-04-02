@@ -1,4 +1,4 @@
-async function obtenerDatos() {
+const obtenerDatos = async () => {
     const url = 'https://jsonplaceholder.typicode.com/photos';
 
     try {
@@ -9,17 +9,21 @@ async function obtenerDatos() {
             console.log(album.title);
         });
 
-        await enviarMensaje();
+        await infoEnviada();
     } catch (error) {
-        console.log(error);    
+        console.log(error);
     }
 }
-function enviarMensaje() {
+
+const enviarMensaje = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log("Información enviada");
-            resolve('Mensaje enviado');
+            resolve('Información enviada');
         }, 3000);
     });
+}
+const infoEnviada = async () => {
+    const info = await enviarMensaje();
+    console.log(info);
 }
 obtenerDatos();
