@@ -5,8 +5,10 @@ const obtenerDatos = async () => {
         const response = await fetch(url);
         const data = await response.json();
 
-        data.slice(0, 20).forEach(album => {
-            console.log(album.title);
+        data.forEach(element => {
+            if(element.id <= 20){
+                console.log(element.title);
+            }
         });
 
         await infoEnviada();
